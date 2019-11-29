@@ -1,9 +1,11 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent { docker { image 'maven:3.6.0-jdk-12' } }
     stages {
         stage('build') {
             steps {
                 sh 'mvn --version'
+                cd 'kaliber-platform-complete'
+                sh 'mvn clean package'
             }
         }
     }
