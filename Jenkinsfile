@@ -4,8 +4,6 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
-                cd 'kaliber-platform-complete'
-                sh 'mvn clean package'
             }
         }
     }
